@@ -2,9 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#8b6b35" />
-  <title>Core Beauty Essence • Ponto</title>
+  <title>Core Beauty Essence • Ponto Mobile</title>
   <style>
     :root{
       --bg:#f5efe5; --paper:#fffdfa; --paper2:#fbf7f0; --ink:#3f2d1d; --muted:#7d6d5d;
@@ -47,9 +50,57 @@
     .footer{text-align:center;color:var(--muted);font-size:11px;margin-top:24px}
     @media(max-width:900px){.auth-layout{grid-template-columns:1fr}.auth-visual{min-height:auto;padding:28px}.logo-panel img{width:240px}.logo-panel p{display:none}.auth-card{padding:28px}.grid.two{grid-template-columns:1fr}.grid.metrics{grid-template-columns:1fr 1fr}.topbar{padding:0 14px}.user-pill{display:none}}
     @media(max-width:560px){.container{width:min(100% - 20px,1220px);margin-top:16px}.brand-text b{font-size:15px}.brand-text span{display:none}.brand img{height:44px;width:44px}.grid.metrics{grid-template-columns:1fr 1fr}.card{padding:15px}.page-title{align-items:flex-start;flex-direction:column}.page-title h1{font-size:27px}.clock{font-size:44px}.dialog .row{grid-template-columns:1fr}.auth-card h1{font-size:29px}.auth-wrap{padding:10px}.auth-layout{border-radius:20px}.auth-visual{display:none}}
+
+
+    /* ===== Versão mobile v5 ===== */
+    .mobile-login-logo{display:none}
+    @supports(padding:max(0px)){
+      .topbar{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+      .container{padding-bottom:env(safe-area-inset-bottom)}
+      .auth-wrap{padding-bottom:max(10px,env(safe-area-inset-bottom))}
+    }
+    @media(max-width:700px){
+      html{-webkit-text-size-adjust:100%;background:#f5efe5}
+      body{font-size:15px;min-height:100dvh;overscroll-behavior-y:none}
+      button,input,select,textarea{font-size:16px}
+      .topbar{height:auto;min-height:64px;padding-top:7px;padding-bottom:7px;gap:8px}
+      .brand{gap:8px;flex:1;overflow:hidden}.brand img{width:42px;height:42px;border-radius:11px;flex:0 0 auto}
+      .brand-text{min-width:0}.brand-text b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand-text span{display:block;font-size:9px;margin-top:3px}
+      .top-actions{gap:5px;flex:0 0 auto}.top-actions .btn{min-height:42px;padding:8px 10px;border-radius:11px;font-size:11px;white-space:nowrap}.user-pill{display:none}
+      .container{width:calc(100% - 16px);margin:12px auto 30px}
+      .page-title{margin-bottom:12px;gap:8px}.page-title h1{font-size:25px}.page-title p{font-size:13px;line-height:1.4}.admin-badge{font-size:9px}
+      .card{padding:14px;border-radius:16px;box-shadow:0 8px 28px rgba(71,49,30,.08)}
+      .grid{gap:10px}.grid.two{grid-template-columns:1fr}.grid.metrics{grid-template-columns:1fr 1fr;gap:8px}
+      .metric{padding:13px;border-radius:14px}.metric strong{font-size:25px}.metric span{font-size:9px}
+      .section-head{align-items:flex-start;gap:8px;margin-bottom:11px}.section-head h2{font-size:18px}.section-head p{font-size:12px}.section-head>.btn{flex:0 0 auto}
+      .clock-card{padding:18px 14px}.clock{font-size:46px;margin:8px 0 12px}.clock-card .date{font-size:13px}.next-punch{font-size:13px}
+      .photo-box{padding:11px;border-radius:13px}.photo-box input[type=file]{min-height:48px;padding:10px;background:#fff}.preview{max-height:42vh}
+      label{font-size:13px;margin-top:12px}.field,select,textarea,input[type="text"],input[type="password"],input[type="date"],input[type="datetime-local"],input[type="file"]{min-height:48px;padding:11px 12px;border-radius:12px;font-size:16px}
+      textarea{min-height:74px}
+      .btn{min-height:46px;padding:11px 13px;border-radius:12px}.btn.small{min-height:40px;padding:8px 10px}.btn.full{min-height:52px;font-size:16px;margin-top:15px}
+      .timeline-item{grid-template-columns:14px 1fr auto;gap:7px;padding:9px 0}.timeline-item small{font-size:11px}
+      .navtabs{position:sticky;top:64px;z-index:15;display:flex;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:7px;margin:0 -8px 12px;padding:8px;background:rgba(245,239,229,.95);backdrop-filter:blur(10px);scrollbar-width:none}.navtabs::-webkit-scrollbar{display:none}.navtabs button{flex:0 0 auto;min-height:40px;padding:8px 12px;font-size:12px}
+      .filters{display:grid;grid-template-columns:1fr;gap:8px}.filters>div,.filters .compact{min-width:0;width:100%}.filters .compact .btn{width:100%}
+      .actions{gap:7px}.actions .btn{flex:1;min-width:92px}
+      .table-wrap{border:0;overflow:visible;background:transparent}.table-wrap table{min-width:0;width:100%;background:transparent;border-collapse:separate;border-spacing:0 8px}.table-wrap thead{display:none}.table-wrap tbody,.table-wrap tr,.table-wrap td{display:block;width:100%}.table-wrap tr{background:#fffdfa;border:1px solid var(--line);border-radius:14px;padding:8px 12px;box-shadow:0 4px 14px rgba(71,49,30,.05)}.table-wrap td{border:0!important;padding:7px 0!important;display:grid;grid-template-columns:minmax(92px,35%) 1fr;gap:9px;align-items:start;text-align:right;overflow-wrap:anywhere}.table-wrap td::before{content:attr(data-label);font-size:10px;line-height:1.3;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:800;text-align:left}.table-wrap td>b,.table-wrap td>small,.table-wrap td>.status,.table-wrap td>.actions,.table-wrap td>.btn{justify-self:end;text-align:right}.table-wrap td .actions{width:100%;grid-column:2}.table-wrap small{font-size:11px}
+      .empty{padding:20px 12px;font-size:13px}
+      .dialog-backdrop{place-items:end center;padding:0}.dialog{width:100%;max-height:88dvh;border-radius:22px 22px 0 0;padding:18px 14px calc(18px + env(safe-area-inset-bottom));}.dialog h3{font-size:22px}.dialog-footer{position:sticky;bottom:0;background:var(--paper);padding-top:10px}.dialog-footer .btn{flex:1}
+      .photo-modal{padding:10px}.photo-modal img{max-width:100%;max-height:82dvh;border-radius:14px}.photo-modal button{right:12px;top:12px;min-width:44px;min-height:44px}
+      .cloud-note{padding:12px;gap:8px}.cloud-note p{font-size:11px}
+      .footer{margin-top:18px;padding-bottom:8px}
+      .auth-wrap{display:block;min-height:100dvh;padding:0;background:linear-gradient(180deg,#efe2cb 0,#f8f3eb 190px,#f8f3eb 100%)}
+      .auth-layout{width:100%;min-height:100dvh;border:0;border-radius:0;box-shadow:none;background:transparent;display:block}.auth-visual{display:none}.auth-card{width:100%;max-width:520px;margin:0 auto;padding:calc(24px + env(safe-area-inset-top)) 18px 24px;align-self:auto}
+      .mobile-login-logo{display:flex;justify-content:center;margin:0 auto 18px}.mobile-login-logo img{width:128px;height:128px;object-fit:cover;border-radius:26px;border:1px solid #d9c69f;box-shadow:0 12px 30px rgba(82,57,28,.12)}
+      .auth-card .eyebrow{text-align:center;font-size:10px}.auth-card h1{text-align:center;font-size:31px;margin-top:7px}.auth-card .lead{text-align:center;font-size:14px;margin-bottom:22px}.auth-foot{font-size:12px}
+      .notice{font-size:12px}
+    }
+    @media(max-width:390px){
+      .brand-text span{display:none}.brand-text b{font-size:13px}.top-actions .btn{padding:8px 8px;font-size:10px}.grid.metrics{grid-template-columns:1fr 1fr}.metric{padding:11px}.metric strong{font-size:23px}.clock{font-size:42px}.page-title h1{font-size:23px}
+    }
+
   </style>
 </head>
-<body>
+<body class="mobile-ready">
 <div id="app"></div>
 <div id="modalRoot"></div>
 <script>
@@ -120,7 +171,7 @@ function layout(content){const u=currentUser();const display=u?.role==='superadm
 function go(view){APP.view=view;render()}
 
 function loginView(){
-  document.getElementById('app').innerHTML=`<div class="auth-wrap"><div class="auth-layout"><section class="auth-visual"><div class="logo-panel">${logo()}<p>Registro simples, visual e organizado para acompanhamento do ponto pela equipe de Recursos Humanos.</p></div></section><section class="auth-card">${noticeHtml()}<div class="eyebrow">Controle de Ponto</div><h1>Bem-vindo(a)</h1><p class="lead">Acesse com seu <b>nome completo</b> e PIN de 4 números.</p><form id="loginForm"><label>Usuário</label><input class="field" name="username" autocomplete="username" required placeholder="Digite seu nome completo"><label>PIN</label><input class="field" name="pin" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" type="password" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,4)" autocomplete="current-password" required placeholder="••••"><button class="btn primary full">Entrar</button></form><div class="auth-foot"><small>Todos os funcionários já estão cadastrados.<br>PIN inicial da demonstração: <b>1234</b></small></div></section></div></div>`;
+  document.getElementById('app').innerHTML=`<div class="auth-wrap"><div class="auth-layout"><section class="auth-visual"><div class="logo-panel">${logo()}<p>Registro simples, visual e organizado para acompanhamento do ponto pela equipe de Recursos Humanos.</p></div></section><section class="auth-card">${noticeHtml()}<div class="mobile-login-logo">${logo()}</div><div class="eyebrow">Controle de Ponto</div><h1>Bem-vindo(a)</h1><p class="lead">Acesse com seu <b>nome completo</b> e PIN de 4 números.</p><form id="loginForm"><label>Usuário</label><input class="field" name="username" list="employeeNames" autocomplete="username" required placeholder="Digite ou selecione seu nome"><datalist id="employeeNames">${APP.employees.map(e=>`<option value="${esc(e.name)}"></option>`).join('')}</datalist><label>PIN</label><input class="field" name="pin" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" type="password" oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,4)" autocomplete="current-password" required placeholder="••••"><button class="btn primary full">Entrar</button></form><div class="auth-foot"><small>Todos os funcionários já estão cadastrados.<br>PIN inicial da demonstração: <b>1234</b></small></div></section></div></div>`;
   $('#loginForm').onsubmit=loginSubmit;
 }
 async function loginSubmit(ev){ev.preventDefault();const fd=new FormData(ev.currentTarget);const login=usernameKey(fd.get('username')),pin=String(fd.get('pin'));
@@ -130,11 +181,11 @@ async function loginSubmit(ev){ev.preventDefault();const fd=new FormData(ev.curr
   const h=await hashPin(pin,u.salt);if(h!==u.pinHash){toast('Nome completo ou PIN incorreto.','danger');return render()}
   APP.session={userId:u.id};APP.view=APP.adminRoles.includes(u.role)?'admin':'employee';audit('login','user',u.id);render();
 }
-function employeeView(){const u=currentUser();const e=emp(u.employeeId);const today=localDate(new Date());const entries=store.entries().filter(x=>x.employeeId===e.id&&x.punchedAt.slice(0,10)===today).sort((a,b)=>a.punchedAt.localeCompare(b.punchedAt));const stat=dayStatus(entries);const next=APP.punchTypes[Math.min(entries.length,3)];const recent=store.entries().filter(x=>x.employeeId===e.id).sort((a,b)=>b.punchedAt.localeCompare(a.punchedAt)).slice(0,16);const content=`${noticeHtml()}<div class="page-title"><div><h1>Olá, ${esc(e.name.split(' ')[0])}</h1><p>${esc(e.job)} • acompanhe suas marcações de hoje.${isAdmin(u)?' Você também possui acesso ao painel administrativo.':''}</p></div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${isAdmin(u)?'<span class="admin-badge">Acesso administrativo</span>':''}<span class="status ${stat.cls}">${stat.label}</span></div></div><div class="grid two"><section class="card clock-card"><div class="date" id="liveDate"></div><div class="clock" id="liveClock">--:--:--</div><div class="next-punch">Próxima marcação: <b>${entries.length>=4?'Registro adicional':APP.labels[next]}</b></div><form id="punchForm" style="text-align:left;margin-top:20px"><input type="hidden" name="punchType" value="${next}"><label>Foto obrigatória</label><div class="photo-box"><input id="photoInput" type="file" name="photo" accept="image/*" capture="user" required><small style="color:var(--muted)">No celular, você pode abrir a câmera diretamente.</small><img class="preview" id="photoPreview" alt="Prévia da foto"></div><label>Observação <span style="font-weight:400;color:var(--muted)">(opcional)</span></label><textarea name="note" rows="2" placeholder="Ex.: retorno de visita externa"></textarea><button class="btn primary full">Registrar ${entries.length>=4?'marcação adicional':APP.labels[next]}</button></form></section><section class="card"><div class="section-head"><div><h2>Hoje</h2><p>Marcações realizadas em ${fmtDate(today)}.</p></div></div>${entries.length?`<div class="timeline">${entries.map(x=>timelineEntry(x)).join('')}</div>`:`<div class="empty">Nenhuma marcação registrada hoje.</div>`}</section></div><section class="card"><div class="section-head"><div><h2>Meu histórico</h2><p>Últimas marcações registradas.</p></div></div>${recent.length?`<div class="table-wrap"><table><thead><tr><th>Data</th><th>Horário</th><th>Tipo</th><th>Observação</th><th>Foto</th></tr></thead><tbody>${recent.map(x=>`<tr><td>${fmtDate(x.punchedAt.slice(0,10))}</td><td>${fmtTime(x.punchedAt)}</td><td>${esc(APP.labels[x.punchType])}${x.edited?'<small>ajustado pelo RH</small>':''}</td><td>${esc(x.note||'—')}</td><td>${x.photoId?`<button class="btn ghost small" data-photo="${x.photoId}">Ver foto</button>`:'—'}</td></tr>`).join('')}</tbody></table></div>`:`<div class="empty">Seu histórico aparecerá aqui.</div>`}</section>`;document.getElementById('app').innerHTML=layout(content);startClock();$('#punchForm').onsubmit=punchSubmit;$('#photoInput').onchange=previewPhoto}
+function employeeView(){const u=currentUser();const e=emp(u.employeeId);const today=localDate(new Date());const entries=store.entries().filter(x=>x.employeeId===e.id&&x.punchedAt.slice(0,10)===today).sort((a,b)=>a.punchedAt.localeCompare(b.punchedAt));const stat=dayStatus(entries);const next=APP.punchTypes[Math.min(entries.length,3)];const recent=store.entries().filter(x=>x.employeeId===e.id).sort((a,b)=>b.punchedAt.localeCompare(a.punchedAt)).slice(0,16);const content=`${noticeHtml()}<div class="page-title"><div><h1>Olá, ${esc(e.name.split(' ')[0])}</h1><p>${esc(e.job)} • acompanhe suas marcações de hoje.${isAdmin(u)?' Você também possui acesso ao painel administrativo.':''}</p></div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${isAdmin(u)?'<span class="admin-badge">Acesso administrativo</span>':''}<span class="status ${stat.cls}">${stat.label}</span></div></div><div class="grid two"><section class="card clock-card"><div class="date" id="liveDate"></div><div class="clock" id="liveClock">--:--:--</div><div class="next-punch">Próxima marcação: <b>${entries.length>=4?'Registro adicional':APP.labels[next]}</b></div><form id="punchForm" style="text-align:left;margin-top:20px"><input type="hidden" name="punchType" value="${next}"><label>Foto obrigatória</label><div class="photo-box"><input id="photoInput" type="file" name="photo" accept="image/*" capture="user" required><small style="color:var(--muted)">No celular, você pode abrir a câmera diretamente.</small><img class="preview" id="photoPreview" alt="Prévia da foto"></div><label>Observação <span style="font-weight:400;color:var(--muted)">(opcional)</span></label><textarea name="note" rows="2" placeholder="Ex.: retorno de visita externa"></textarea><button type="submit" class="btn primary full">Registrar ${entries.length>=4?'marcação adicional':APP.labels[next]}</button></form></section><section class="card"><div class="section-head"><div><h2>Hoje</h2><p>Marcações realizadas em ${fmtDate(today)}.</p></div></div>${entries.length?`<div class="timeline">${entries.map(x=>timelineEntry(x)).join('')}</div>`:`<div class="empty">Nenhuma marcação registrada hoje.</div>`}</section></div><section class="card"><div class="section-head"><div><h2>Meu histórico</h2><p>Últimas marcações registradas.</p></div></div>${recent.length?`<div class="table-wrap"><table><thead><tr><th>Data</th><th>Horário</th><th>Tipo</th><th>Observação</th><th>Foto</th></tr></thead><tbody>${recent.map(x=>`<tr><td>${fmtDate(x.punchedAt.slice(0,10))}</td><td>${fmtTime(x.punchedAt)}</td><td>${esc(APP.labels[x.punchType])}${x.edited?'<small>ajustado pelo RH</small>':''}</td><td>${esc(x.note||'—')}</td><td>${x.photoId?`<button class="btn ghost small" data-photo="${x.photoId}">Ver foto</button>`:'—'}</td></tr>`).join('')}</tbody></table></div>`:`<div class="empty">Seu histórico aparecerá aqui.</div>`}</section>`;document.getElementById('app').innerHTML=layout(content);startClock();$('#punchForm').onsubmit=punchSubmit;$('#photoInput').onchange=previewPhoto}
 function timelineEntry(x){return `<div class="timeline-item"><span class="dot"></span><div><b>${esc(APP.labels[x.punchType])}</b><small>${fmtTime(x.punchedAt)}${x.note?' • '+esc(x.note):''}${x.edited?' • ajustado pelo RH':''}</small></div>${x.photoId?`<button class="btn ghost small" data-photo="${x.photoId}">Foto</button>`:''}</div>`}
 function startClock(){const tick=()=>{const d=new Date();if($('#liveDate'))$('#liveDate').textContent=new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'}).format(d);if($('#liveClock'))$('#liveClock').textContent=`${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`};tick();clearInterval(window.__clock);window.__clock=setInterval(tick,1000)}
 function previewPhoto(ev){const f=ev.target.files?.[0],img=$('#photoPreview');if(!f||!img)return;const url=URL.createObjectURL(f);img.src=url;img.style.display='block';img.onload=()=>URL.revokeObjectURL(url)}
-async function punchSubmit(ev){ev.preventDefault();const btn=$('button[type="submit"]',ev.currentTarget);btn.disabled=true;btn.textContent='Registrando...';try{const fd=new FormData(ev.currentTarget),file=fd.get('photo');if(!(file instanceof File)||!file.size)throw new Error('A foto é obrigatória.');const blob=await compressImage(file),photoId=await savePhoto(blob);const u=currentUser(),e=emp(u.employeeId);const entries=store.entries();entries.push({id:uid(),employeeId:e.id,userId:u.id,punchType:String(fd.get('punchType')),punchedAt:new Date().toISOString(),note:String(fd.get('note')||'').trim(),photoId,edited:false,createdAt:new Date().toISOString()});store.set(KEYS.entries,entries);audit('punch_created','entry',entries.at(-1).id,{employee:e.name});toast('Ponto registrado com sucesso.','ok');render()}catch(err){toast(err.message||'Não foi possível registrar o ponto.','danger');render()}}
+async function punchSubmit(ev){ev.preventDefault();const btn=ev.currentTarget.querySelector('button[type="submit"], button:not([type])');try{if(btn){btn.disabled=true;btn.textContent='Registrando...';}const fd=new FormData(ev.currentTarget),file=fd.get('photo');if(!(file instanceof File)||!file.size)throw new Error('A foto é obrigatória.');const blob=await compressImage(file),photoId=await savePhoto(blob);const u=currentUser(),e=emp(u.employeeId);const entries=store.entries();entries.push({id:uid(),employeeId:e.id,userId:u.id,punchType:String(fd.get('punchType')),punchedAt:new Date().toISOString(),note:String(fd.get('note')||'').trim(),photoId,edited:false,createdAt:new Date().toISOString()});store.set(KEYS.entries,entries);audit('punch_created','entry',entries.at(-1).id,{employee:e.name});toast('Ponto registrado com sucesso.','ok');render()}catch(err){toast(err.message||'Não foi possível registrar o ponto.','danger');render()}}
 function dayStatus(entries){const types=entries.map(e=>e.punchType);if(!types.length)return {label:'Sem registro',cls:'muted'};if(types.length===4&&types.every((t,i)=>t===APP.punchTypes[i]))return {label:'Correto',cls:'ok'};if(types.length<4)return {label:'Incompleto',cls:'warn'};if(types.slice(0,4).some((t,i)=>t!==APP.punchTypes[i]))return {label:'Sequência divergente',cls:'danger'};return {label:'Batida extra',cls:'warn'}}
 
 function adminUser(){return currentUser()}
@@ -159,6 +210,18 @@ function exportCsv(){const rows=store.entries().sort((a,b)=>a.punchedAt.localeCo
 function downloadBackup(){const backup={version:1,exportedAt:new Date().toISOString(),employees:APP.employees,users:store.users(),entries:store.entries(),audits:store.audits(),note:'As fotos não estão incluídas neste JSON; permanecem no IndexedDB deste navegador.'};downloadBlob(new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),`backup_ponto_${localDate(new Date())}.json`)}
 function downloadBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 async function resetDemo(){if(!confirm('Isso apagará marcações e auditoria desta demonstração e recriará os 15 acessos padrão. Continuar?'))return;localStorage.removeItem(KEYS.users);localStorage.removeItem(KEYS.entries);localStorage.removeItem(KEYS.audits);indexedDB.deleteDatabase(PHOTO_DB);ensureBootstrap();audit('demo_reset','system',null,{});toast('Dados limpos. Os 15 acessos padrão foram recriados com PIN 1234.','ok');render()}
+
+
+function enhanceMobileTables(root=document){
+  root.querySelectorAll('.table-wrap table').forEach(table=>{
+    const headers=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+    table.querySelectorAll('tbody tr').forEach(tr=>{
+      [...tr.children].forEach((td,i)=>{if(td.tagName==='TD'&&!td.dataset.label)td.dataset.label=headers[i]||''});
+    });
+  });
+}
+const mobileTableObserver=new MutationObserver(()=>enhanceMobileTables(document));
+mobileTableObserver.observe(document.getElementById('app'),{childList:true,subtree:true});
 
 function render(){ensureBootstrap();const u=currentUser();if(APP.session&&!u){APP.session=null}if(!APP.session){return loginView()}if(isAdmin(u)){if(APP.view==='employee')return employeeView();APP.view='admin';return adminView()}APP.view='employee';return employeeView()}
 
